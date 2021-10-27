@@ -1,0 +1,160 @@
+% !TeX root = 2021-10-18_Uebungsblatt1.tex
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{./Ressourcen/Aufgabenblatt/Praeambel.tex} % !!! NICHT ENTFERNEN !!!
+\input{./_Einstellungen_LA.tex}                    % !!! DATEI ANPASSEN !!!
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{amsmath}
+\newcommand{\PlakatTitel}{Aufgabenblatt 1 (18. Oktober 2021) - Bearbeitung}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{./Ressourcen/Aufgabenblatt/Anfang.tex} % !!! NICHT ENTFERNEN !!!
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Bearbeitung zu Aufgabenblatt 1 (gestellt~am~18.10.2021)}
+\author{Hausaufgaben Team 02 (Valentin~Herrmann,~Dominique~Wittmann)}
+
+\PlakatKopfzeileMitFakultaetslogoVeranstaltungTitel
+\MakeTitleNewPage
+
+
+\subsection*{Aufgabe 5}
+\subsubsection*{1.)}
+Bei einem Bruch wird der Zähler durch den Nenner geteilt. Hierbei steht der Zähler über 
+und der Nenner unter dem Bruchstrich. Der Zähler ist Element der ganzen Zahlen, der Nenner ist Element der ganzen Zahlen außer 0.\\
+Als \emph{gleichnamig} werden zwei Brüche mit gleichem Nenner bezeichnet.\\
+Beim \emph{Erweitern} werden Zähler und Nenner eines Bruchs mit dem gleichen
+Faktor multipliziert. Der Gesamtwert des Bruchs ändert sich hierdurch nicht.
+Dies gilt analog für das \emph{Kürzen}, nur dass hier durch den gleichen Divisor geteilt wird.
+Für das vollständige Kürzen wird als Divisor der größter gemeinsame Teiler verwendet.
+
+\subsubsection*{2.)}
+\begin{itemize}
+    \item[a)] Ein (vollständig) gekürzter Bruch ist ein Bruch, bei dem Zähler und Nenner keinen gemeinsamen Teiler habe. Sie sind also teilerfremd. 
+    \item[b)] Um zwei Brüche gleichnamig zu machen, erweitert man die beiden jeweils mit dem Nenner des anderen.
+    \item[c)] Zur Multiplikation zweier Brüche multipliziert man den Zähler des einen mit dem Zähler des anderen und analog den Nenner.
+    \item[d)] Zur Addition zweier Brüche macht man diese zunächst gleichnamig und addiert anschließend die beiden Zähler zueinander und übernimmt den gemeinsamen Nenner. Ggf. kann das Ergebnis dann noch gekürzt werden.
+\end{itemize}
+
+\subsubsection*{3.)}
+
+\begin{align*}
+        & a,b \in , a \neq 0, b \neq 0 \\
+        \Leftrightarrow & \frac{1}{a}+\frac{1}{b}-\frac{1}{a+b} \\
+        \Leftrightarrow & \frac{a+b}{ab}-\frac{1}{a+b} \\
+        \Leftrightarrow & \frac{(a+b)^2-ab}{ab(a+b)} \\
+        \Leftrightarrow & \frac{(a+b)^2-ab}{a^2b+ab^2}
+\end{align*}
+
+
+\subsection*{Aufgabe 6}
+\subparagraph{1.)}
+Nein, denn eine Person, die als Maler sehr bekannt ist ("der bekannteste Maler") und auch gleichzeitig dichtet,
+ist dann der bekannteste Maler unter den Dichtern. Da diese Person als Dichter nicht unbedingt sehr 
+bekannt sein muss, sondern ein anderer Maler ein bekannterer Dichter sein kann, ist der bekannteste
+Maler unter den Dichtern nicht gleich der bekannteste Dichter unter den Malern.
+\subparagraph{2.)}
+Ja, denn die Maler unter den Dichtern bezeichnen die gleiche Schnittmenge, wie die Dichter
+unter den Malern. Somit gibt es hier nur eine einheitliche Gruppe, die auch nur eine 
+älteste Person hat.
+\subparagraph*{3.)}
+Ja, denn wie bei 2.) handelt es sich auch hier wieder nur um zwei verschiedene Beschreibungen
+derselben Schnittmenge zwischen den beiden Gruppen Maler und Dichter. Somit ist die Reihenfolge
+der Eigenschaften auch hier irrelevant.
+
+\subsection*{Aufgabe 7}
+\textbf{Gegeben:}\\
+$l_k = 0,5$ (Land pro Kuh in Hektar)\\
+$l_w = 1$ (Land pro Weizen in Hektar)\\
+$l = 20$ (insgesamt verfügbares Land in Hektar)\\
+\\
+$t_k = 200$ (Zeit pro eine Kuh in Stunden) \\
+$t_w = 100$ (Zeit pro einen Hektar Weizen in Stunden) \\ 
+$t = 2400$ (insagesamt verfügbare Zeit in Stunden) \\
+\\
+$G_k = 350$ (Gewinn pro Kuh in Euro)\\
+$G_w = 260$ (Gewinn pro Hektar Weizen in Euro)\\
+\\
+\textbf{Gesucht:}\\
+$G_{max} = k \cdot G_k + w \cdot G_w = 350k + 260w$ (größtmöglicher Gesamtgewinn in Abhängigkeit von der Menge an Kühen und Weizen)\\
+
+Nach k auflösen:
+\begin{align*}
+    l &= k \cdot l_k + w \cdot l_w\\
+    \Leftrightarrow 20 &= 0,5k + w &\textbar -w\\
+    \Leftrightarrow 0,5k &= 20 - w &\textbar \cdot2\\
+    \Leftrightarrow k &= 40-2w
+\end{align*}
+
+\begin{align*}
+    t &= k \cdot t_k + w \cdot t_w\\
+    \Leftrightarrow 2400 &= 200k + 100w &\textbar -100w\\
+    \Leftrightarrow 200k &= 2400 - 100w &\textbar \div 200\\
+    \Leftrightarrow k &= 12 - 0,5w
+\end{align*}
+
+Gleichsetzen:
+\begin{align*}
+    40-2w &= 12 - 0,5w &\textbar +2w-12\\
+    \Leftrightarrow 1,5w &= 38 &\textbar \div 1,5\\
+    \Leftrightarrow w &= \frac{56}{3}
+\end{align*}
+
+Einsetzen:
+\begin{align*}
+    k &= 12 - 0,5w\\
+    \Leftrightarrow k &= 12 - 0,5 \cdot \frac{56}{3}\\
+    \Leftrightarrow k &= \frac{8}{3}
+\end{align*}
+
+Teilkühe nicht möglich, daher auf ganze Kühe runden.\\
+
+\textbf{Bei Aufrunden:}
+\begin{align*}
+    k_{auf} &= 3\\
+    k_{auf} &= 40-2w_{auf}\\
+    \Leftrightarrow 3 &= 40-2w_{auf} &\textbar -40\\
+    \Leftrightarrow -2w_{auf} &= -37 &\textbar \div (-2)\\
+    \Leftrightarrow w_{auf} &= 18,5
+\end{align*}
+Prüfen:
+\begin{align*}
+    3 \cdot 0,5 + 18,5 = 20 (Land:\surd)\\
+    3 \cdot 200 + 18,5 \cdot 100 = 2450 (Zeit:\times)
+\end{align*}
+
+50 Stunden Zeit zu viel benötigt, daher einen halben Hektar Weizen (=50h) weniger. Also nur 18 Hektar Weizen ($w_{auf}=18$)\\
+$\Rightarrow G_{auf} = 3 \cdot 350 + 18 \cdot 260 = 5730$ [€]\\
+
+
+\textbf{Bei Abrunden:}
+\begin{align*}
+    k_{ab} &= 2\\
+    k_{ab} &= 40-2w_{ab}\\
+    \Leftrightarrow 2 &= 40-2w_{ab} &\textbar -40\\
+    \Leftrightarrow -2w_{ab} &= -38 &\textbar \div (-2)\\
+    \Leftrightarrow w_{ab} &= 19
+\end{align*}
+Prüfen:
+\begin{align*}
+    2 \cdot 0,5 + 19 = 20 (Land:\surd)\\
+    2 \cdot 200 + 19 \cdot 100 = 2300 (Zeit:\surd)
+\end{align*}
+
+$\Rightarrow G_{ab} = 2 \cdot 350 + 19 \cdot 260 = 5640$ [€]\\
+
+\textbf{Also:}\\
+$G_{ab} < G_{auf} \Rightarrow G_{max} = G_{auf} = 5730$ [€]\\
+Der Agrarökonom kann also mit 3 Kühen und 18 Hektar Weizen den höchsten Gewinn von 5730€ erzielen.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document} % !!! NICHT ENTFERNEN !!!
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+

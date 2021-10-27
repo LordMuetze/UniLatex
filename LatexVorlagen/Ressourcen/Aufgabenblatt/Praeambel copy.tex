@@ -1,0 +1,112 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper, margin=1.5cm]{geometry}
+
+\newcommand{\PlakatFormat}{A4 hochkant}
+
+\renewcommand{\papertype}{custom}
+\renewcommand{\fontpointsize}{11pt}
+\setlength{\paperwidth}{210mm}
+\setlength{\paperheight}{297mm}
+\renewcommand{\setpspagesize}{
+    \special{papersize=\paperheight,\paperwidth}%
+}
+
+\usepackage[utf8]{inputenc} % Textkodierung: UTF-8
+\usepackage[T1]{fontenc} % Zeichensatzkodierung
+
+\usepackage[ngerman]{babel} % Deutsche Lokalisierung
+\usepackage{graphicx} % Grafiken
+\usepackage{calc} % Berechnungen
+\usepackage{titling}
+
+% Silbentrennung:
+\usepackage{hyphenat}
+%\tolerance 2414
+%\hbadness 2414
+%\emergencystretch 1.5em
+%\hfuzz 0.3pt
+%\widowpenalty=10000     % Hurenkinder
+%\clubpenalty=10000      % Schusterjungen
+%\vfuzz \hfuzz
+
+% Euro-Symbol:
+\usepackage[gen]{eurosym}
+\DeclareUnicodeCharacter{20AC}{\euro{}}
+
+% Schriftart Helvetica:
+\usepackage[scaled]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+\usepackage{bookmark} % Lesezeichen
+
+\usepackage{mathptmx} % skalierbare Formelschriften
+
+\usepackage{multicol} % mehrspaltiger Text
+%\usepackage{showframe} % Seitenbegrenzungen anzeigen
+\usepackage{lipsum} % Blindtext
+
+% Unterdrückung layoutbedingter Warnungen
+\usepackage[immediate]{silence}
+\WarningFilter[layout]{Fancyhdr}{\footskip is too small (18.4941pt)} % Fußzeile A4 Hoch und Quer
+\WarningFilter[layout]{Fancyhdr}{headheight is too small (39.83385pt)} % Kopfzeile A4 Quer
+
+% Debugging:
+%\DeactivateWarningFilters[layout] % Unterdrückte Warnungen einschalten
+
+
+
+\newsavebox{\TempBox}
+
+
+% Für Beischreibung:
+\newlength{\PlakatBeschreibungBeispielbildBeschnitt}
+\setlength{\PlakatBeschreibungBeispielbildBeschnitt}{0cm}
+\newcommand{\PlakatBeschreibungBeispielbild}{true}
+\newcommand{\PlakatBeschreibungKopfzeileUndAbsender}{true}
+\newcommand{\PlakatBeschreibungDruck}{true}
+\newcommand{\PlakatBeschreibungKurz}{false}
+\newcommand{\TRUE}{true}
+
+
+
+
+\setlength{\PlakatFusszeilePositionUnten}{-5.5mm}
+\renewcommand{\PlakatFusszeileSpaltenzahl}{3}
+
+
+
+
+\setlength{\PlakatSeiteRand}{1cm}
+\setlength{\PlakatKopfzeileHoehe}{14mm}
+\setlength{\PlakatKopfzeileAbstand}{4.4mm}
+\setlength{\PlakatKopfzeilePositionUnten}{25.4mm}
+\setlength{\PlakatUniversitaetLogoBreite}{19mm}
+\setlength{\PlakatFakultaetLogoBreite}{12mm}
+\setlength{\PlakatPositionLinks}{15.3mm}
+\setlength{\PlakatFakultaetslogoPositionKorrekturLinks}{26.5mm}
+\setlength{\PlakatFakultaetslogoPositionKorrekturOben}{0.7mm}
+\setlength{\PlakatFakultaetslogoAbstandRechts}{3.7mm}
+\setlength{\PlakatUniversitaetslogoPositionKorrekturLinks}{15.4mm}
+\setlength{\PlakatSpaltenAbstand}{7mm}
+\setlength{\PlakatSchriftNormalGroesse}{11pt}
+\setlength{\PlakatSchriftNormalZeilenabstand}{15pt}
+\setlength{\PlakatFusszeileHoehe}{15mm}
+\setlength{\PlakatAufzaehlungAbstandLinks}{0.9em}
+
+
+\newcommand{\PlakatKopfzeileSchriftgroesse}{\fontsize{9}{11}}
+\newcommand{\PlakatSchriftStandard}{\PlakatSchriftNormalGroesse\selectfont}
+\newcommand{\PlakatFusszeileSchrift}{\fontsize{9}{10.8}\selectfont}
+\newcommand{\PlakatBildUnterschrift}[1]{{\\[1pt]\fontsize{10}{12}\selectfont{}#1\vspace{-\baselineskip}}}
+
+
+
+
+
+
+
+
+\setlength{\PlakatSeiteHoehe}{24.1cm}
+\setlength{\PlakatEinspaltigPositionKorrekturOben}{-14mm}
+
+\usepackage[foot=30pt]{geometry}

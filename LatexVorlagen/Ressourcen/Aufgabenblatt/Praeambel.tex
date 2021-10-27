@@ -1,0 +1,140 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper, left=1.5cm, right=1.5cm, top=3.5cm, bottom=1.5cm]{geometry}
+
+
+\usepackage[utf8]{inputenc} % Textkodierung: UTF-8
+\usepackage[T1]{fontenc} % Zeichensatzkodierung
+
+\usepackage[ngerman]{babel} % Deutsche Lokalisierung
+\usepackage{graphicx} % Grafiken
+\usepackage{calc} % Berechnungen
+\usepackage{titling}
+\usepackage{xcolor}
+
+% Silbentrennung:
+\usepackage{hyphenat}
+%\tolerance 2414
+%\hbadness 2414
+%\emergencystretch 1.5em
+%\hfuzz 0.3pt
+%\widowpenalty=10000     % Hurenkinder
+%\clubpenalty=10000      % Schusterjungen
+%\vfuzz \hfuzz
+
+% Euro-Symbol:
+\usepackage[gen]{eurosym}
+\DeclareUnicodeCharacter{20AC}{\euro{}}
+
+\usepackage{calc}
+% Schriftart Helvetica:
+%\usepackage[scaled]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+\usepackage{bookmark} % Lesezeichen
+
+\usepackage{amsmath}
+\usepackage{mathptmx} % skalierbare Formelschriften
+
+\usepackage{multicol} % mehrspaltiger Text
+%\usepackage{showframe} % Seitenbegrenzungen anzeigen
+\usepackage{lipsum} % Blindtext
+
+% Unterdrückung layoutbedingter Warnungen
+\usepackage[immediate]{silence}
+\WarningFilter[layout]{Fancyhdr}{\footskip is too small (18.4941pt)} % Fußzeile A4 Hoch und Quer
+\WarningFilter[layout]{Fancyhdr}{headheight is too small (39.83385pt)} % Kopfzeile A4 Quer
+
+% Debugging:
+%\DeactivateWarningFilters[layout] % Unterdrückte Warnungen einschalten
+
+
+
+% Längen:
+\newlength{\PlakatSeiteHoehe}
+\newlength{\PlakatSeiteRand}
+\newlength{\PlakatKopfzeileHoehe}
+\newlength{\PlakatKopfzeileAbstand}
+\newlength{\PlakatFusszeileHoehe}
+\newlength{\PlakatUniversitaetLogoBreite}
+\newlength{\PlakatFakultaetLogoBreite}
+\newlength{\PlakatPositionLinks}
+\newlength{\PlakatKopfzeilePositionUnten}
+\newlength{\PlakatFakultaetslogoPositionKorrekturLinks}
+\newlength{\PlakatFakultaetslogoPositionKorrekturOben}
+\newlength{\PlakatFakultaetslogoAbstandRechts}
+\newlength{\PlakatFusszeilePositionUnten}
+\newlength{\PlakatFusszeilePositionKorrektur}
+\newlength{\PlakatTitelZweiPlatzDanach}
+\newlength{\PlakatTitelDreiPlatzDanach}
+\newlength{\PlakatUniversitaetslogoPositionKorrekturLinks}
+\newlength{\PlakatSpaltenAbstand}
+\newlength{\PlakatSchriftNormalGroesse}
+\newlength{\PlakatSchriftNormalZeilenabstand}
+\newlength{\PlakatAufzaehlungAbstandLinks}
+
+
+\setlength{\PlakatFusszeilePositionUnten}{-5.5mm}
+
+
+
+
+\setlength{\PlakatSeiteRand}{1.5cm}
+\setlength{\PlakatKopfzeileHoehe}{14mm}
+\setlength{\PlakatKopfzeileAbstand}{0mm}
+\setlength{\PlakatKopfzeilePositionUnten}{10mm}
+\setlength{\PlakatUniversitaetLogoBreite}{19mm}
+\setlength{\PlakatFakultaetLogoBreite}{12mm}
+\setlength{\PlakatPositionLinks}{0mm}
+\setlength{\PlakatFakultaetslogoPositionKorrekturLinks}{10mm}
+\setlength{\PlakatFakultaetslogoPositionKorrekturOben}{0.7mm}
+\setlength{\PlakatFakultaetslogoAbstandRechts}{0mm}
+\setlength{\PlakatUniversitaetslogoPositionKorrekturLinks}{0mm}
+\setlength{\PlakatSpaltenAbstand}{7mm}
+\setlength{\PlakatSchriftNormalGroesse}{11pt}
+\setlength{\PlakatSchriftNormalZeilenabstand}{15pt}
+\setlength{\PlakatFusszeileHoehe}{15mm}
+\setlength{\PlakatAufzaehlungAbstandLinks}{0.9em}
+
+
+\newcommand{\PlakatKopfzeileSchriftgroesse}{\fontsize{9}{11}}
+\newcommand{\PlakatSchriftStandard}{\PlakatSchriftNormalGroesse\selectfont}
+\newcommand{\PlakatFusszeileSchrift}{\fontsize{9}{10.8}\selectfont}
+\newcommand{\PlakatBildUnterschrift}[1]{{\\[1pt]\fontsize{10}{12}\selectfont{}#1\vspace{-\baselineskip}}}
+
+
+
+% Definition of \maketitle
+\makeatletter         
+\def\@maketitle{
+\raggedright
+%\includegraphics[width=\PlakatFakultaetLogoBreite]{./Ressourcen/_Bilder/Fakultaet_Logo_RGB.pdf}%\\[8ex]
+\begin{textblock*}{\PlakatFakultaetLogoBreite}%
+    [1,1](\PlakatFakultaetslogoPositionKorrekturLinks,
+        \PlakatKopfzeilePositionUnten + \PlakatFakultaetslogoPositionKorrekturOben)% 
+\includegraphics[width=\PlakatFakultaetLogoBreite]{./Ressourcen/_Bilder/Fakultaet_Logo_RGB.pdf}%
+\end{textblock*}%
+\begin{textblock*}{\textwidth - \PlakatFakultaetLogoBreite - \PlakatFakultaetslogoAbstandRechts}%
+    [0,1](\PlakatPositionLinks + \PlakatFakultaetLogoBreite + \PlakatFakultaetslogoAbstandRechts, \PlakatKopfzeilePositionUnten)%
+\color{UniversitaetFarbe}%
+\PlakatKopfzeileSchriftgroesse\selectfont%
+\LehrVeranstaltung\\%
+\theauthor\\%
+\thetitle\\%
+\end{textblock*}%
+\begin{textblock*}{\PlakatUniversitaetLogoBreite}[1,1]%
+    (\paperwidth - \PlakatSeiteRand - \PlakatSeiteRand + \PlakatUniversitaetslogoPositionKorrekturLinks, \PlakatKopfzeilePositionUnten)%
+\includegraphics[width=\PlakatUniversitaetLogoBreite]{./Ressourcen/_Bilder/Universitaet_Logo_RGB.pdf}%
+\end{textblock*}%
+\begin{center}
+\color{black}%
+\vspace*{\fill}
+{\Huge \bfseries \sffamily \@title }\\[4ex]
+{\Large\LehrVeranstaltung}\\[4ex]
+{\Large  \@author}\\
+\vspace*{\fill}
+\vspace*{50mm}
+\end{center}}
+\makeatother
+
+
+\newcommand{\MakeTitleNewPage}{\maketitle \newpage \color{black}}
